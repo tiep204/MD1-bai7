@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai2</title>
+</head>
+<body>
+<h3>Amaunt</h3>
+<input placeholder="Tiền Nhập" type="text" id="input">
+<h3>From Currency</h3>
+<select id="inn" onchange="doitien()">
+    <option value="VND">VND</option>
+    <option value="USD">USD</option>
+</select>
+<h3>To Curency</h3>
+<select id="out" onchange="doitien()">
+    <option value="VND">VND</option>
+    <option value="USD">USD</option>
+</select><br><br>
+<h1 id="dkq"></h1>
+<button onclick="doitien()">convert</button>
+<script>
+    function doitien(){
+       let input = document.getElementById('input').value;
+       let inn = document.getElementById('inn').value;
+       let out = document.getElementById('out').value;
+       let ketQua
+       if (inn === out){
+           document.getElementById('dkq').innerHTML = "<h7 style='color: red'>please nhập mệnh giá khác nhau!!!</h7>"
+           return
+       }
+       if (inn === "VND") {
+           if(out === "USD") {
+               ketQua= input/25000
+           }
+       }
+       if (inn === "USD") {
+           if (out === "VND") {
+               ketQua= input*0.000043
+           }
+       }
+
+    document.getElementById('dkq').innerHTML = ketQua+out
+    }
+</script>
+
+</body>
+</html>

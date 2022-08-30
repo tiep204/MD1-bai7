@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input placeholder="nhập điểm môn toán vào đây" type="text" id="toan">
+<input placeholder="hãy nhập môn lý!!" type="text" id="ly">
+<input placeholder="xin mời nhập điểm hóa" type="text" id="hoa">
+<button onclick="cacdiem()">Ấn vào tôi</button>
+<h3 id="diemTrungBinh">Điểm Trung Bình</h3>
+<h3 id="tongDiem">Tổng Điểm</h3>
+<script>
+  function cacdiem() {
+    let diemtoan=+document.getElementById('toan').value;
+    console.log("diemtoan--->",diemtoan);
+    let diemly=+document.getElementById('ly').value;
+    console.log("diemly",diemly);
+    let diemhoa=+document.getElementById('hoa').value;
+    console.log(diemtoan,diemly,diemhoa,);
+    let diemtrungbinh=(diemtoan+diemly+diemhoa)/3
+    document.getElementById("diemTrungBinh").innerHTML="Điểm trung bình:"+diemtrungbinh
+      let tongdiem=(diemtoan+diemly+diemhoa)
+    document.getElementById("tongDiem").innerHTML="Tổng Điểm:"+tongdiem
+      console.log(typeof (diemhoa) );
+
+
+
+  }
+</script>
+</body>
+</html>

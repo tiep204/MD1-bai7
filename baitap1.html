@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>baitap</title>
+</head>
+<body>
+<label>Ban Kinh: </label>
+<input id="radius" type="text">
+<button onclick="dientichvachuvi()">tinh dien chu vi va dien tich</button>
+<h1 id="chu_vi"></h1><br>
+<h1 id="dien_tich"></h1>
+<h1>Bài 1</h1>
+<script>
+var diemtoan = prompt('nhap diem toan vao day');
+var diemly = prompt('nhap diem ly vao day');
+var diemhoa = prompt('nhap diem hoa vao day');
+var toan = parseInt(diemtoan);
+var ly = parseInt(diemly);
+var hoa = parseInt(diemhoa);
+var diemtrungbinh = (toan+ly+hoa)/3
+var tongdiem = toan+ly+hoa
+document.write('Điểm Trung Bình la:',diemtrungbinh +'<br>')
+document.write('Tổng Các điểm:',tongdiem)
+</script>
+<h1>Bai 2</h1>
+<script>
+    var C = prompt('nhap so c vao');
+    var soc = parseInt(C);
+    var F = (9*C +175)/5
+    document.write('So F la:',F)
+</script>
+<h1>Bai 3</h1>
+<script>
+    // cach1
+    var radius = +prompt('nhapr: ')
+    const PI = Math.PI
+    var S = PI * radius * radius
+    var Cv = 2*Math.PI*radius;
+    document.write('dien tich hinh tron la:' , S + '<br>');
+    document.write('chu vi hinh tron la:' ,Cv);
+
+    // cach2: dung dom thao tac voi html
+    function dientichvachuvi() {
+        let radius = document.getElementById('radius').value;
+        let chuvi = 2*Math.PI*radius;
+        let dientich = Math.PI*Math.pow(radius,2);
+        document.getElementById('chu_vi').innerHTML = 'Chu Vi hinh tron: '+chuvi;
+        document.getElementById('dien_tich').innerHTML = 'Dien tich hinh tron: '+dientich;
+    }
+
+</script>
+
+</body>
+</html>
